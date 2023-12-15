@@ -37,7 +37,7 @@ buttonRegister.addEventListener('click', (e) => {
             });
         })
         .then(() => {
-            alert("User telah ditambahkan");
+            console.log("User telah ditambahkan");
         })
         .catch((error) => {
             alert("error");

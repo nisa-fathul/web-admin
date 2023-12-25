@@ -35,6 +35,7 @@
         if (!sessionStorage.getItem('user-creds')) {
             // Jika kosong, arahkan kembali ke halaman indeks
             window.location.href = 'index.php';
+            alert('Login Dulu Bang!');
         }
     </script>
 
@@ -274,10 +275,9 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
+                            <button class="dropdown-item d-flex align-items-center" id="signoutButton" type="button">
+                                <i class="bi bi-box-arrow-right"></i>Sign Out
+                            </button>
                         </li>
 
                     </ul>
@@ -399,6 +399,16 @@
                 <script src="assets/js/main.js"></script>
                 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
                 <script type="module" src="assets/js/CRUD.js"></script>
+                <script>
+        let signoutButton = document.getElementById('signoutButton')
+
+    let SignOut = () => {
+        sessionStorage.removeItem("user-creds");
+        window.location.href = "index.php"
+    }
+
+    signoutButton.addEventListener("click", SignOut)
+    </script>
 </body>
 
 </html>

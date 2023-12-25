@@ -33,6 +33,7 @@
         if (sessionStorage.getItem('user-creds')) {
             // Jika kosong, arahkan kembali ke halaman indeks
             window.location.href = 'dashboard.php';
+            alert('Ngapain login lagi orang dah login, Aneh!');
         }
     </script>
 

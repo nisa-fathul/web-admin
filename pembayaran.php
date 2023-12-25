@@ -359,62 +359,18 @@
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">Pesanan <span>/Hari Ini</span></h5>
+                            <h5 class="card-title">Pembayaran <span>/Hari Ini</span></h5>
                             <table class="table table-borderless datatable">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Customer</th>
-                                        <th scope="col">Product</th>
                                         <th scope="col">Price</th>
-                                        <th scope="col">Status Pemesanan</th>
-                                        <th scope="col">Aksi</th>
+                                        <th scope="col">Status Pembayaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row"><a href="#">#2457</a></th>
-                                        <td>Brandon Jacob</td>
-                                        <td><a href="#" class="text-primary">Kendaraan (motor)</a></td>
-                                        <td>200.000</td>
-                                        <td>Pesanan sudah di setujui</td>
-
-                                        <td>
-                                            <div class="col-12">
-                                                <button class="btn btn-primary" type="button" onclick="">Sudah Bayar</button>
-                                                <button class="btn btn-secondary hide" type="button" onclick="">Belum Bayar</button>
-
-                                            </div>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"><a href="#">#2147</a></th>
-                                        <td>Bridie Kessler</td>
-                                        <td><a href="#" class="text-primary">Banner L</a></td>
-                                        <td>150.000</td>
-                                        <td>Pesanan sudah di setujui</td>
-                                        <td>
-                                            <div class="col-12">
-                                                <button class="btn btn-primary" type="submit">Sudah Bayar</button>
-                                                <button class="btn btn-secondary" type="reject">Belum Bayar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">#2049</a></th>
-                                        <td>Ashleigh Langosh</td>
-                                        <td><a href="#" class="text-primary">Billboard XL</a></td>
-                                        <td>200.000</td>
-                                        <td>Pesanan sudah di setujui</td>
-                                        <td>
-                                            <div class="col-12">
-                                                <button class="btn btn-primary" type="submit">Sudah Bayar</button>
-                                                <button class="btn btn-secondary" type="reject">Belum Bayar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
 
@@ -445,9 +401,7 @@
 
                 <!-- Template Main JS File -->
                 <script src="assets/js/main.js"></script>
-                <script defer src="./assets/js/myscript.js"></script>
-
-
+                <script type="module" src="assets/js/CRUD.js"></script>
 </body>
 
 </html>

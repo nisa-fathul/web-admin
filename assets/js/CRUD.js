@@ -35,10 +35,10 @@ if (currentPage === 'pesanan.php') {
                                 ? `<td>
                                     <div class="col-12">
                                         <button class="btn btn-primary" type="submit" onclick="sData('${doc.id}')">Setujui</button>
-                                        <button class="btn btn-secondary" type="reject" onclick="tData('${doc.id}')">Tolak</button>
+                                        <button class="btn btn-secondary" type="submit" onclick="tData('${doc.id}')">Tolak</button>
                                     </div>
                                 </td>`
-                                : `<td>${doc.data().status}</td>`
+                                : `<td> - </td>`
                         }
                     </tr>
                 `);
@@ -89,7 +89,7 @@ if (currentPage === 'pembayaran.php') {
         querySnapshot.forEach((doc) => {
             $("tbody").append(`
                 <tr>
-                    <th scope="row"><a href="#">#2457</a></th>
+                    <th scope="row"><a href="#">${doc.id}</a></th>
                     <td>${doc.data().selectedPaymentOption}</td>
                     <td>${doc.data().orderPrice}</td>
                     ${
@@ -151,24 +151,28 @@ if (currentPage === 'status_pemesanan.php') {
         querySnapshot.forEach((doc) => {
             $("tbody").append(`
                 <tr>
-                <th scope="row"><a href="#">1</a></th>
+                <th scope="row"><a href="#">${doc.id}</a></th>
                     <td>${doc.data().selectedPaymentOption}</td>
                     <td><a href="#" class="text-primary">${doc.data().jenisBillboard}</a></td>
                     <td>${doc.data().orderPrice}</td>
                     <td>${doc.data().status}</td>
-                    <td>
-                        <div class="container mt-5">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                Pilih Opsi
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><button class="btn" type="button" onclick="handleOption('Opsi 1')">On Progress</button></li>
-                                    <li><button class="btn" type="button" onclick="handleOption('Opsi 2')">Done</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </td>
+                    ${
+                        doc.data().status === "DISETUJUI" || doc.data().status === "ON PROGRESS"
+                        ? `<td>
+                                <div class="container mt-5">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Pilih Opsi
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><button type="button" onclick="handleOptionO('${doc.id}')">On Progress</button></li>
+                                            <li><button type="button" onclick="handleOptionS('${doc.id}')">Selesai</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>`
+                        : `<td> - </td>`
+                    }
                 </tr>
             `);
         });
@@ -176,4 +180,35 @@ if (currentPage === 'status_pemesanan.php') {
         console.error("Firestore Read Error:", error);
     }
     })
+
+    window.handleOptionO =  async function(id){
+        try{
+            const docId = id;
+            // Melakukan pembaruan dokumen dengan status "disetujui"
+            await updateDoc(doc(firestore, 'orders', docId), {
+                status: 'ON PROGRESS',
+            });
+
+            // Menampilkan alert bahwa data berhasil diubah
+            alert('Data berhasil diubah');
+            location.reload();
+        }catch(err){
+            console.log(err);
+        }
+    }
+    window.handleOptionS =  async function(id){
+        try{
+            const docId = id;
+            // Melakukan pembaruan dokumen dengan status "disetujui"
+            await updateDoc(doc(firestore, 'orders', docId), {
+                status: 'SELESAI',
+            });
+
+            // Menampilkan alert bahwa data berhasil diubah
+            alert('Data berhasil diubah');
+            location.reload();
+        }catch(err){
+            console.log(err);
+        }
+    }
 }

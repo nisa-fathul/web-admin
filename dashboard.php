@@ -33,6 +33,7 @@
         if (!sessionStorage.getItem('user-creds')) {
             // Jika kosong, arahkan kembali ke halaman indeks
             window.location.href = 'index.php';
+            alert('Login Dulu Bang!');
         }
     </script>
 
@@ -814,7 +815,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script defer src="./assets/js/myscript.js"></script>
+    <script defer src="assets/js/CRUD.js" type="module"></script>
 
     <script>
         let signoutButton = document.getElementById('signoutButton')

@@ -40,7 +40,7 @@ signInWithEmailAndPassword(auth, obj.email, obj.password)
 .then(function(success){
     try {
         // Coba lakukan operasi pada session storage
-        sessionStorage.setItem("user-creds", "test")
+        sessionStorage.setItem("user-creds", success.user.uid)
         
         // Jika berhasil, lanjutkan dengan operasi berikutnya
         console.log("Operation on session storage successful");

@@ -369,50 +369,12 @@
                                         <th scope="col">Customer</th>
                                         <th scope="col">Product</th>
                                         <th scope="col">Price</th>
-                                        <th scope="col">Status Pemesanan</th>
-                                        <th scope="col">Status Pembayaran</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row"><a href="#">#2457</a></th>
-                                        <td>Brandon Jacob</td>
-                                        <td><a href="#" class="text-primary">Kendaraan (motor)</a></td>
-                                        <td>200.000</td>
-                                        <td>Di setujui</td>
-                                        <td>SUdah di bayar</td>
-                                        <td>
-                                            <div class="container mt-5">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Pilih Opsi
-                                                    </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <li><button class="btn" type="button" onclick="handleOption('Opsi 1')">Opsi 1</button></li>
-                                                        <li><button class="btn" type="button" onclick="handleOption('Opsi 2')">Opsi 2</button></li>
-                                                        <li><button class="btn" type="button" onclick="handleOption('Opsi 3')">Opsi 3</button></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row"><a href="#">#2147</a></th>
-                                        <td>Bridie Kessler</td>
-                                        <td><a href="#" class="text-primary">Banner L</a></td>
-                                        <td>150.000</td>
-                                        <td>Null</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">#2049</a></th>
-                                        <td>Ashleigh Langosh</td>
-                                        <td><a href="#" class="text-primary">Billboard XL</a></td>
-                                        <td>200.000</td>
-                                        <td>Null</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
 
@@ -443,9 +405,7 @@
 
                 <!-- Template Main JS File -->
                 <script src="assets/js/main.js"></script>
-                <script defer src="./assets/js/myscript.js"></script>
-
-
+                <script type="module" src="assets/js/CRUD.js"></script>
 </body>
 
 </html>
